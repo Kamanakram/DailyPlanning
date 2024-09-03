@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Planning</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Daily Planning</h1>
+
+    <!-- Afficher la date du jour -->
+    <div id="current-date" class="date-display"></div>
+
+    <!-- Chronomètre pour le temps restant -->
+    <div id="countdown" class="countdown"></div>
+
+    <table>
+        <tr>
+            <th>Islamic Side</th>
+            <th>Job Side</th>
+            <th>Sport & Health Side</th>
+            <th>Others</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" placeholder="Task..." id="task-islamic">
+                <div class="progress-bar">
+                    <input type="range" min="0" max="100" value="0" id="progress-islamic" oninput="updatePercentage('islamic')">
+                    <span id="percentage-islamic">0%</span>
+                </div>
+                <button onclick="saveProgress('Islamic')">Save</button>
+            </td>
+            <td>
+                <input type="text" placeholder="Task..." id="task-job">
+                <div class="progress-bar">
+                    <input type="range" min="0" max="100" value="0" id="progress-job" oninput="updatePercentage('job')">
+                    <span id="percentage-job">0%</span>
+                </div>
+                <button onclick="saveProgress('Job')">Save</button>
+            </td>
+            <td>
+                <input type="text" placeholder="Task..." id="task-sport">
+                <div class="progress-bar">
+                    <input type="range" min="0" max="100" value="0" id="progress-sport" oninput="updatePercentage('sport')">
+                    <span id="percentage-sport">0%</span>
+                </div>
+                <button onclick="saveProgress('Sport')">Save</button>
+            </td>
+            <td>
+                <input type="text" placeholder="Task..." id="task-others">
+                <div class="progress-bar">
+                    <input type="range" min="0" max="100" value="0" id="progress-others" oninput="updatePercentage('others')">
+                    <span id="percentage-others">0%</span>
+                </div>
+                <button onclick="saveProgress('Others')">Save</button>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Bouton pour naviguer vers la page de suivi -->
+    <button onclick="window.open('tracker.html', '_blank')" class="track-button">Go to Task Tracker</button>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
